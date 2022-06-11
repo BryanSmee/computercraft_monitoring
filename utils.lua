@@ -1,6 +1,6 @@
 function getLibName(peripheral_name)
     local block_name = peripheral_name:match('(.*)_')
-    local lua_lib_path = "/disk/libs/" .. string.gsub(block_name, ":", "/") .. "/api.lua"
+    local lua_lib_path = "/libs/" .. string.gsub(block_name, ":", "/") .. "/api.lua"
     return lua_lib_path
 end
 

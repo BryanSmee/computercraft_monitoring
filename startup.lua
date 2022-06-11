@@ -1,5 +1,5 @@
-os.loadAPI("/disk/utils.lua")
-os.loadAPI("/disk/libs/influxdb.lua")
+os.loadAPI("/utils.lua")
+os.loadAPI("/libs/influxdb.lua")
 
 local network_per = peripheral.wrap(settings.get("network_side"))
 local i = 0

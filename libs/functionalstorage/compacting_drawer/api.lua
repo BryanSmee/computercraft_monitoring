@@ -1,5 +1,5 @@
 function getData(network_name, network_peripheral)
-    os.loadAPI("/disk/libs/functionalstorage/common.lua")
+    os.loadAPI("/libs/functionalstorage/common.lua")
     for i = 1, 3 do
         data = common.getData(network_name, network_peripheral, i)
         if data ~= nil then
