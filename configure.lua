@@ -32,3 +32,9 @@ influxdb = {
 settings.set("influxdb", influxdb)
 
 settings.save(".settings")
+
+ae2_config = { watch_list = {} }
+
+settings.clear()
+settings.set("ae2", ae2_config)
+settings.save("/ae2.settings")

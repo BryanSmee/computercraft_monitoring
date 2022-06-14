@@ -31,7 +31,10 @@ function generate_influx_string(measurement, tags, data)
 end
 
 function write_raw(data_string)
-    return http.post(config.api_full_url, data_string, config.headers)
+    a, b, c = http.post(config.api_full_url, data_string, config.headers)
+    if a == nil then
+        print(c.readAll())
+    end
 end
 
 function write(measurement, tags, data)

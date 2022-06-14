@@ -16,10 +16,13 @@ while true do
 
     update_string = ""
     measurement_count = 0
-    for i, name in ipairs(block_names) do
+    for _, name in ipairs(block_names) do
         local data = utils.getDataFromNetworkName(name, network_per)
-        update_string = update_string .. influxdb.generate_influx_string("itemCount", data.tags, data.measure) .. "\n"
-        measurement_count = measurement_count + 1
+        for y = 1, #data do
+            update_string = update_string ..
+                influxdb.generate_influx_string("itemCount", data[y].tags, data[y].measure) .. "\n"
+            measurement_count = measurement_count + 1
+        end
     end
 
     print(measurement_count .. " measures done")

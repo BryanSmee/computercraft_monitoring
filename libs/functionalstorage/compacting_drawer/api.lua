@@ -8,5 +8,5 @@ function getData(network_name, network_peripheral)
     end
     if data == nil then return common.fallback_value end
     os.unloadAPI("common")
-    return data
+    return { data }
 end
